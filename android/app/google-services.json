@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "280927224860",
+    "project_id": "test-saurabh-2270d",
+    "storage_bucket": "test-saurabh-2270d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280927224860:android:3b0b07913b0c0302f3cbd9",
+        "android_client_info": {
+          "package_name": "com.flutterflow.testsaurabh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280927224860-l2qune2dnghca8l085fij0c9jndf1pvk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVggruGOEazHYvUVszgdYV9_6o1cRaVjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280927224860-l2qune2dnghca8l085fij0c9jndf1pvk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
