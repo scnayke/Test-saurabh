@@ -1,3 +1,4 @@
+import '../flutter_flow/flutter_flow_calendar.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,17 @@ class ProfileWidget extends StatefulWidget {
 }
 
 class _ProfileWidgetState extends State<ProfileWidget> {
+  DateTimeRange calendarSelectedDay;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    calendarSelectedDay = DateTimeRange(
+      start: DateTime.now().startOfDay,
+      end: DateTime.now().endOfDay,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -172,17 +183,30 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       child: Stack(
                         children: [
                           Align(
-                            alignment: Alignment(0.65, 0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [],
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment(-0.51, 0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [],
+                            alignment: Alignment(0, 0.8),
+                            child: FlutterFlowCalendar(
+                              color: Color(0x970E530C),
+                              weekFormat: true,
+                              weekStartsMonday: true,
+                              onChange: (DateTimeRange newSelectedDate) {
+                                setState(() =>
+                                    calendarSelectedDay = newSelectedDate);
+                              },
+                              titleStyle: FlutterFlowTheme.title1.override(
+                                fontFamily: 'Poppins',
+                              ),
+                              dayOfWeekStyle: TextStyle(),
+                              dateStyle: FlutterFlowTheme.title3.override(
+                                fontFamily: 'Poppins',
+                              ),
+                              selectedDateStyle:
+                                  FlutterFlowTheme.title3.override(
+                                fontFamily: 'Poppins',
+                              ),
+                              inactiveDateStyle:
+                                  FlutterFlowTheme.subtitle1.override(
+                                fontFamily: 'Poppins',
+                              ),
                             ),
                           )
                         ],

@@ -30,7 +30,6 @@ dependencies:
   cloud_firestore: ^0.16.0
   firebase_auth: ^0.20.0+1
   firebase_core: ^0.7.0
-  flutter_facebook_auth: ^2.0.2+1
   font_awesome_flutter:
   geolocator:
   google_fonts:
@@ -40,6 +39,7 @@ dependencies:
   page_transition:
   rxdart: ^0.25.0
   sign_in_with_apple: ^2.5.4
+  table_calendar: ^2.3.3
   timeago:
   url_launcher:
 
