@@ -4,8 +4,7 @@ import 'auth/firebase_user_provider.dart';
 import 'package:test_saurabh/login/login_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
-import 'news/news_widget.dart';
-import 'discover/discover_widget.dart';
+import 'categories/categories_widget.dart';
 import 'search/search_widget.dart';
 import 'profile/profile_widget.dart';
 
@@ -72,9 +71,8 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'News': NewsWidget(),
-      'Discover': DiscoverWidget(),
-      'Search': SearchWidget(),
+      'Categories': CategoriesWidget(),
+      'search': SearchWidget(),
       'Profile': ProfileWidget(),
     };
     return Scaffold(
@@ -82,32 +80,27 @@ class _NavBarPageState extends State<NavBarPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.solidNewspaper,
+            icon: Icon(
+              Icons.poll_sharp,
               color: Color(0xFF9E9E9E),
               size: 24,
             ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.moneyCheckAlt,
-              color: Color(0xFF9E9E9E),
-              size: 24,
-            ),
-            label: 'Discover',
+            label: 'Index',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.searchDollar,
-              color: Color(0xFF9E9E9E),
+              size: 24,
+            ),
+            activeIcon: Icon(
+              Icons.search_sharp,
               size: 24,
             ),
             label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person_sharp,
+              Icons.perm_identity,
               color: Color(0xFF9E9E9E),
               size: 24,
             ),

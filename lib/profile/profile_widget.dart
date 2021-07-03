@@ -1,8 +1,7 @@
-import '../flutter_flow/flutter_flow_calendar.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProfileWidget extends StatefulWidget {
@@ -13,143 +12,177 @@ class ProfileWidget extends StatefulWidget {
 }
 
 class _ProfileWidgetState extends State<ProfileWidget> {
-  DateTimeRange calendarSelectedDay;
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-    calendarSelectedDay = DateTimeRange(
-      start: DateTime.now().startOfDay,
-      end: DateTime.now().endOfDay,
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      endDrawer: Drawer(
-        elevation: 16,
-        child: Stack(
+      body: SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
           children: [
-            Align(
-              alignment: Alignment(0, 0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Stack(
+                              children: [
+                                Align(
+                                  alignment: Alignment(0.85, 0),
+                                  child: Container(
+                                    width: 80,
+                                    height: 80,
+                                    clipBehavior: Clip.antiAlias,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Image.asset(
+                                      'assets/images/UI_avatar@2x.png',
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(24, 20, 0, 0),
+                                  child: Text(
+                                    '[User Name Here]',
+                                    style: FlutterFlowTheme.title2.override(
+                                      fontFamily: 'Poppins',
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: Alignment(-1, 0),
+                                  child: Padding(
+                                    padding: EdgeInsets.fromLTRB(24, 45, 0, 0),
+                                    child: Text(
+                                      'User.name@domainname.com',
+                                      textAlign: TextAlign.start,
+                                      style:
+                                          FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.secondaryColor,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 12, 0, 12),
+                      child: Text(
+                        'Account',
+                        style: FlutterFlowTheme.bodyText1.override(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.zero,
+                scrollDirection: Axis.vertical,
                 children: [
-                  Expanded(
-                    child: ListView(
-                      padding: EdgeInsets.zero,
-                      scrollDirection: Axis.vertical,
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.rectangle,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
+                              child: Text(
+                                'Order History',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Poppins',
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Align(
+                                alignment: Alignment(0.9, 0),
+                                child: Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Color(0xFF95A1AC),
+                                  size: 18,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 1, 0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                width: 285,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFEEEEEE),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      'Hello World',
-                                      style:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Poppins',
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Align(
-                                        alignment: Alignment(0.9, 0),
-                                        child: Icon(
-                                          Icons.settings_outlined,
-                                          color: Colors.black,
-                                          size: 24,
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.rectangle,
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Container(
-                                width: 285,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFEEEEEE),
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
+                                child: Text(
+                                  'Settings',
+                                  style: FlutterFlowTheme.bodyText1.override(
+                                    fontFamily: 'Poppins',
+                                  ),
                                 ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      '',
-                                      style:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Poppins',
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Align(
-                                        alignment: Alignment(0.9, 0),
-                                        child: FaIcon(
-                                          FontAwesomeIcons.coins,
-                                          color: Colors.black,
-                                          size: 24,
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                width: 285,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFEEEEEE),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      'Log Out',
-                                      style:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 18,
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Align(
-                                        alignment: Alignment(0.9, 0),
-                                        child: Icon(
-                                          Icons.logout,
-                                          color: Colors.black,
-                                          size: 24,
-                                        ),
-                                      ),
-                                    )
-                                  ],
+                              ),
+                              Expanded(
+                                child: Align(
+                                  alignment: Alignment(0.9, 0),
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Color(0xFF95A1AC),
+                                    size: 18,
+                                  ),
                                 ),
                               )
                             ],
@@ -157,61 +190,114 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         )
                       ],
                     ),
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Align(
-              alignment: Alignment(0, 0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Align(
-                    alignment: Alignment(0, -0.98),
-                    child: Container(
-                      width: 400,
-                      height: 300,
-                      decoration: BoxDecoration(
-                        color: Color(0x92FFFFFF),
-                      ),
-                      child: Stack(
-                        children: [
-                          Align(
-                            alignment: Alignment(0, 0.8),
-                            child: FlutterFlowCalendar(
-                              color: Color(0x970E530C),
-                              weekFormat: true,
-                              weekStartsMonday: true,
-                              onChange: (DateTimeRange newSelectedDate) {
-                                setState(() =>
-                                    calendarSelectedDay = newSelectedDate);
-                              },
-                              titleStyle: FlutterFlowTheme.title1.override(
-                                fontFamily: 'Poppins',
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 1, 0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.rectangle,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
+                                child: Text(
+                                  'Notifications',
+                                  style: FlutterFlowTheme.bodyText1.override(
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
                               ),
-                              dayOfWeekStyle: TextStyle(),
-                              dateStyle: FlutterFlowTheme.title3.override(
-                                fontFamily: 'Poppins',
-                              ),
-                              selectedDateStyle:
-                                  FlutterFlowTheme.title3.override(
-                                fontFamily: 'Poppins',
-                              ),
-                              inactiveDateStyle:
-                                  FlutterFlowTheme.subtitle1.override(
-                                fontFamily: 'Poppins',
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
+                              Expanded(
+                                child: Align(
+                                  alignment: Alignment(0.9, 0),
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Color(0xFF95A1AC),
+                                    size: 18,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
                     ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 1, 0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.rectangle,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
+                                child: Text(
+                                  'Change Password',
+                                  style: FlutterFlowTheme.bodyText1.override(
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Align(
+                                  alignment: Alignment(0.9, 0),
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Color(0xFF95A1AC),
+                                    size: 18,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      FFButtonWidget(
+                        onPressed: () {
+                          print('Button pressed ...');
+                        },
+                        text: 'Log Out',
+                        options: FFButtonOptions(
+                          width: 90,
+                          height: 40,
+                          color: Colors.white,
+                          textStyle: FlutterFlowTheme.bodyText2.override(
+                            fontFamily: 'Poppins',
+                            color: FlutterFlowTheme.primaryColor,
+                          ),
+                          elevation: 3,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: 8,
+                        ),
+                      )
+                    ],
                   )
                 ],
               ),
